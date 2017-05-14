@@ -1,0 +1,2 @@
+Ingresar al archivo index.html de cada Run para ver los resultados de Code Coverage 
+del proyecto UCBKardex

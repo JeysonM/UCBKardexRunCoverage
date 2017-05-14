@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>UCBKardex.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">tests (14-may-2017 14:58:20)</a> &gt; <a href="../../index.html" class="el_group">2BlueJSample</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">UCBKardex.java</span></div><h1>UCBKardex.java</h1><pre class="source lang-java linenums">
+<span class="nc" id="L2">public class UCBKardex {</span>
+	
+	public static void main(String[] args) {
+<span class="nc" id="L5">		System.out.println(&quot;Creating a list of Students...&quot;);</span>
+<span class="nc" id="L6">		Database INF209List = new Database();</span>
+		
+<span class="nc" id="L8">		System.out.println(&quot;Creating a new record...&quot;);</span>
+<span class="nc" id="L9">    	Student Student001 = new Student(&quot;Pepe Martillo&quot;,1991,&quot;001&quot;);</span>
+<span class="nc" id="L10">    	Student001.setAddress(&quot;Av. America&quot;, &quot;Cochabamba&quot;,&quot;1234&quot;);</span>
+<span class="nc" id="L11">    	System.out.println ( &quot;\n\n&quot; );</span>
+<span class="nc" id="L12">    	Student001.enterMarks(8,7,4);</span>
+<span class="nc" id="L13">    	System.out.println ( Student001.GetStudentGradeReport());</span>
+<span class="nc" id="L14">    	INF209List.addPerson(Student001);</span>
+
+<span class="nc" id="L16">    	System.out.println(&quot;Creating a new record...&quot;);</span>
+<span class="nc" id="L17">    	Student Student002 = new Student(&quot;Darth Vader&quot;,1970,&quot;002&quot;);</span>
+<span class="nc" id="L18">    	Student002.setAddress(&quot;Death Star&quot;,&quot;Far far galaxy&quot;,&quot;2396&quot;);</span>
+<span class="nc" id="L19">    	System.out.println ( &quot;\n\n&quot; );</span>
+<span class="nc" id="L20">    	Student002.enterMarks(9,9,8);</span>
+<span class="nc" id="L21">    	System.out.println ( Student002.GetStudentGradeReport());</span>
+<span class="nc" id="L22">    	INF209List.addPerson(Student002);</span>
+    	
+    	
+<span class="nc" id="L25">    	System.out.println (&quot;-----All Students-----&quot;);</span>
+<span class="nc" id="L26">    	INF209List.listAll();</span>
+    	
+<span class="nc" id="L28">    	System.out.println(&quot;Creating a Staff...&quot;);</span>
+<span class="nc" id="L29">    	Staff Staff001 = new Staff(&quot;Luke Skywalker&quot;, 1980, &quot;005&quot;);</span>
+<span class="nc" id="L30">    	Staff001.setSalary(Staff001.calculatePayment(99));</span>
+<span class="nc" id="L31">    	System.out.println(Staff001.toString());</span>
+<span class="nc" id="L32">    	System.out.println (&quot;The loan is paid during year:&quot;+ Staff001.calculateLoan(10000,0.12,75,3000));</span>
+        
+
+<span class="nc" id="L35">	}</span>
+
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>tests (14-may-2017 14:58:20)</div></body></html>

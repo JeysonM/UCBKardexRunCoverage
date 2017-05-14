@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>ChangeStaffAttributes.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">2BlueJSample (14-may-2017 20:38:45)</a> &gt; <a href="../../index.html" class="el_group">2BlueJSample</a> &gt; <a href="../index.html" class="el_bundle">tests</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ChangeStaffAttributes.java</span></div><h1>ChangeStaffAttributes.java</h1><pre class="source lang-java linenums">import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+<span class="fc" id="L5">public class ChangeStaffAttributes {</span>
+
+	@Test
+	public void testChangeRoomProperly() {
+<span class="fc" id="L9">		Staff staff001 = new Staff(&quot;Luke Skywalker&quot;, 1980, &quot;005&quot;);	</span>
+<span class="fc" id="L10">		staff001.setRoom(&quot;007&quot;);</span>
+<span class="fc" id="L11">		assertEquals(staff001.getRoom(),&quot;007&quot;);</span>
+<span class="fc" id="L12">	}</span>
+	
+	
+	@Test
+	public void testChangeNoAtributtesStaffRoomProperly() {
+<span class="fc" id="L17">		Staff staff001 = new Staff();	</span>
+<span class="fc" id="L18">		staff001.setRoom(&quot;007&quot;);</span>
+<span class="fc" id="L19">		assertEquals(staff001.getRoom(),&quot;007&quot;);</span>
+<span class="fc" id="L20">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>2BlueJSample (14-may-2017 20:38:45)</div></body></html>

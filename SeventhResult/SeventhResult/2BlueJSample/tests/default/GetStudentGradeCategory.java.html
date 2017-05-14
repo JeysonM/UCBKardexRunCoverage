@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>GetStudentGradeCategory.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">2BlueJSample (14-may-2017 21:53:32)</a> &gt; <a href="../../index.html" class="el_group">2BlueJSample</a> &gt; <a href="../index.html" class="el_bundle">tests</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">GetStudentGradeCategory.java</span></div><h1>GetStudentGradeCategory.java</h1><pre class="source lang-java linenums">import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+<span class="fc" id="L5">public class GetStudentGradeCategory {</span>
+
+<span class="fc" id="L7">	Student student = new Student(&quot;Pepe Martillo&quot;,1991,&quot;001&quot;);</span>
+	
+	@Test
+	public void testPerectScoreGrade() {
+<span class="fc" id="L11">		assertEquals(student.getGrade(10.0),&quot;Perfect Score&quot;);</span>
+<span class="fc" id="L12">	}</span>
+	
+	@Test
+	public void testExcellentGrade() {
+<span class="fc" id="L16">		assertEquals(student.getGrade(9.0),&quot;Excellent&quot;);</span>
+<span class="fc" id="L17">	}</span>
+	
+	@Test
+	public void testGoodGrade() {
+<span class="fc" id="L21">		assertEquals(student.getGrade(8.0),&quot;Good&quot;);</span>
+<span class="fc" id="L22">	}</span>
+	
+	@Test
+	public void testAboveAverageGrade() {
+<span class="fc" id="L26">		assertEquals(student.getGrade(7.0),&quot;Above Average&quot;);</span>
+<span class="fc" id="L27">	}</span>
+	
+	@Test
+	public void testAverageGrade() {
+<span class="fc" id="L31">		assertEquals(student.getGrade(6.0),&quot;Average&quot;);</span>
+<span class="fc" id="L32">	}</span>
+	
+	@Test
+	public void testBelowAverageGrade() {
+<span class="fc" id="L36">		assertEquals(student.getGrade(5.0),&quot;Below Average&quot;);</span>
+<span class="fc" id="L37">	}</span>
+	
+	@Test
+	public void testNotPassingGrade() {
+<span class="fc" id="L41">		assertEquals(student.getGrade(1.0),&quot;Not Passing&quot;);</span>
+<span class="fc" id="L42">	}</span>
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>2BlueJSample (14-may-2017 21:53:32)</div></body></html>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Staff.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">tests (14-may-2017 17:48:20)</a> &gt; <a href="../../index.html" class="el_group">2BlueJSample</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Staff.java</span></div><h1>Staff.java</h1><pre class="source lang-java linenums">/**
+ * A class representing staff members
+ */
+class Staff extends Person
+{
+    private String room;
+    private double salary;
+    
+
+    /**
+     * Create a staff member with default settings for detail information.
+     */
+    Staff()
+    {
+<span class="nc" id="L15">        super(&quot;(unknown name)&quot;, 0000);</span>
+<span class="nc" id="L16">        room = &quot;(unknown room)&quot;;</span>
+<span class="nc" id="L17">    }</span>
+
+    /**
+     * Create a staff member with given name, year of birth and room
+     * number.
+     */
+    Staff(String name, int yearOfBirth, String roomNumber)
+    {
+<span class="fc" id="L25">        super(name, yearOfBirth);</span>
+<span class="fc" id="L26">        room = roomNumber;</span>
+<span class="fc" id="L27">    }</span>
+
+    /**
+     * Set a new room number for this person.
+     */
+    public void setRoom(String newRoom)
+    {
+<span class="nc" id="L34">        room = newRoom;</span>
+<span class="nc" id="L35">    }</span>
+
+    /**
+     * Return the room number of this person.
+     */
+    public String getRoom()
+    {
+<span class="nc" id="L42">        return room;</span>
+    }
+    
+    /**
+     * Return the salary.
+     */
+    public double getSalary()
+    {
+<span class="fc" id="L50">        return salary;</span>
+    }
+    
+    /**
+     * Return the salary.
+     */
+    public void setSalary(double payment)
+    {
+<span class="fc" id="L58">        salary = payment;</span>
+<span class="fc" id="L59">    }</span>
+
+    /**
+     * Return a string representation of this object.
+     */
+    public String toString()    // redefined from &quot;Person&quot;
+    {
+<span class="nc" id="L66">        return super.toString() +</span>
+<span class="nc" id="L67">               &quot;Staff member\n&quot; +</span>
+<span class="nc" id="L68">               &quot;Room: &quot; + room + &quot;\n&quot;+</span>
+<span class="nc" id="L69">               &quot;Salary: &quot;+ salary+ &quot;\n&quot;;</span>
+               
+    }
+    
+    public double calculatePayment(int hours)
+    {
+<span class="fc" id="L75">    	final double RATE = 8.25;</span>
+<span class="fc" id="L76">    	final int STANDARD = 40;</span>
+<span class="fc" id="L77">    	double pay = 0.0;</span>
+<span class="pc bpc" id="L78" title="1 of 2 branches missed.">    	if (hours &gt; STANDARD)</span>
+    	{
+<span class="fc" id="L80">    		pay = STANDARD * RATE +  (hours - STANDARD)*1.5*RATE;</span>
+<span class="fc" id="L81">    	}</span>
+    	else
+    	{
+<span class="nc" id="L84">    		pay = hours * RATE; </span>
+        }
+<span class="fc" id="L86">    	return pay;</span>
+    }
+    
+    public int calculateLoan(double loan, double interests, double fee, double payment)
+    {
+<span class="fc" id="L91">		int currentYear=2017;</span>
+<span class="pc bpc" id="L92" title="1 of 2 branches missed.">    	for (currentYear = 1; loan&gt;=0; currentYear++)</span>
+    	{
+<span class="fc" id="L94">    		loan = loan + (loan * interests) + (12.0 * fee);</span>
+<span class="fc" id="L95">    		loan = loan - payment;</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">    		if (loan&lt;0)</span>
+    		{
+<span class="fc" id="L98">    			return currentYear;</span>
+    		}
+    		
+    	}
+<span class="nc" id="L102">		return -1;</span>
+    }
+    
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>tests (14-may-2017 17:48:20)</div></body></html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>ChangeStudentAttributes.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">2BlueJSample (14-may-2017 21:53:32)</a> &gt; <a href="../../index.html" class="el_group">2BlueJSample</a> &gt; <a href="../index.html" class="el_bundle">tests</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ChangeStudentAttributes.java</span></div><h1>ChangeStudentAttributes.java</h1><pre class="source lang-java linenums">import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+<span class="fc" id="L6">public class ChangeStudentAttributes {</span>
+
+<span class="fc" id="L8">	Student student001 = new Student(&quot;Pepe Martillo&quot;,1991,&quot;001&quot;);</span>
+	@Before public void changeAttributes (){
+<span class="fc" id="L10">		student001.setName(&quot;Pepito Martillo&quot;);</span>
+<span class="fc" id="L11">		student001.setYearOfBirth(1992);</span>
+<span class="fc" id="L12">	}</span>
+
+	@Test
+	public void changeStudentName() {
+<span class="fc" id="L16">		assertEquals(student001.getName(), &quot;Pepito Martillo&quot;);	</span>
+<span class="fc" id="L17">	}</span>
+	
+	@Test 
+	public void changeStudentYearOfBirth(){
+<span class="fc" id="L21">		assertEquals(student001.getYearOfBirth(), 1992);</span>
+<span class="fc" id="L22">	}</span>
+	
+	@Test 
+	public void changeStudentID(){
+<span class="fc" id="L26">		assertEquals(student001.getStudentID(), &quot;001&quot;);</span>
+<span class="fc" id="L27">	}</span>
+	
+	@Test
+	public void changeNoAttributedStudentName(){
+<span class="fc" id="L31">		Student noAttributesStudent= new Student();</span>
+<span class="fc" id="L32">		noAttributesStudent.setName(&quot;Pepe&quot;);</span>
+<span class="fc" id="L33">		assertEquals(noAttributesStudent.getName(), &quot;Pepe&quot;);</span>
+<span class="fc" id="L34">	}</span>
+	
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>2BlueJSample (14-may-2017 21:53:32)</div></body></html>

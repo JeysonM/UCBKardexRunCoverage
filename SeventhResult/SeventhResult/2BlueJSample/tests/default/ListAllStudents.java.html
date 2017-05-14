@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>ListAllStudents.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">2BlueJSample (14-may-2017 21:53:32)</a> &gt; <a href="../../index.html" class="el_group">2BlueJSample</a> &gt; <a href="../index.html" class="el_bundle">tests</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">ListAllStudents.java</span></div><h1>ListAllStudents.java</h1><pre class="source lang-java linenums">import static org.junit.Assert.*;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+<span class="fc" id="L10">public class ListAllStudents {</span>
+
+	
+<span class="fc" id="L13">	private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();</span>
+<span class="fc" id="L14">	private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();</span>
+	
+	@Before
+	public void setUpStreams() {
+<span class="fc" id="L18">	    System.setOut(new PrintStream(outContent));</span>
+<span class="fc" id="L19">	    System.setErr(new PrintStream(errContent));</span>
+	    
+<span class="fc" id="L21">	}</span>
+
+	@After
+	public void cleanUpStreams() {
+<span class="fc" id="L25">	    System.setOut(null);</span>
+<span class="fc" id="L26">	    System.setErr(null);</span>
+<span class="fc" id="L27">	}</span>
+	
+	@Test
+	public void test() {
+		
+<span class="fc" id="L32">		Database database = new Database();</span>
+<span class="fc" id="L33">		Student student001 = new Student(&quot;Pepe Martillo&quot;,1991,&quot;001&quot;);	</span>
+<span class="fc" id="L34">		student001.setAddress(&quot;Av. America&quot;, &quot;Cochabamba&quot;,&quot;1234&quot;);</span>
+<span class="fc" id="L35">		student001.enterMarks(8,7,4);</span>
+<span class="fc" id="L36">		database.addPerson(student001);</span>
+<span class="fc" id="L37">		database.listAll();</span>
+<span class="fc" id="L38">	    assertEquals((&quot;Name: Pepe Martillo\nYear of birth: 1991\nStudent\nStudent ID: 001\n\r\n&quot;), outContent.toString());</span>
+		
+<span class="fc" id="L40">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>2BlueJSample (14-may-2017 21:53:32)</div></body></html>

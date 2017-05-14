@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../.resources/report.gif" type="image/gif"/><title>Student.java</title><link rel="stylesheet" href="../../../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../.sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">2BlueJSample (14-may-2017 20:38:45)</a> &gt; <a href="../../index.html" class="el_group">2BlueJSample</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">default</a> &gt; <span class="el_source">Student.java</span></div><h1>Student.java</h1><pre class="source lang-java linenums">/**
+ * A class representing students.
+ *
+ */
+
+class Student extends Person
+{
+	private String SID;    // student ID number
+	private int markForMaths; //math mark
+	private int markForEnglish;//english mark
+	private int markForScience;//science mark
+
+    /**
+     * Create a student with default settings for detail information.
+     */
+
+    Student()
+    {
+<span class="fc" id="L19">    	super(&quot;(unknown name)&quot;, 0000);</span>
+<span class="fc" id="L20">    	SID = &quot;(unknown ID)&quot;;</span>
+<span class="fc" id="L21">    }</span>
+ 
+
+    /**
+     * Create a student with given name, year of birth and student ID
+     */
+    Student(String name, int yearOfBirth, String studentID)
+	{
+<span class="fc" id="L29">		super(name, yearOfBirth);</span>
+<span class="fc" id="L30">        SID = studentID;</span>
+<span class="fc" id="L31">    }</span>
+
+    /**
+     * Return the student ID of this student.
+     */
+    public String getStudentID()
+    {
+<span class="fc" id="L38">       return SID;</span>
+    }
+
+    /**
+     * Return a string representation of this object.
+     */
+    public String toString()    // redefined from &quot;Person&quot;
+    {
+<span class="fc" id="L46">        return super.toString() +</span>
+<span class="fc" id="L47">               &quot;Student\n&quot; +</span>
+<span class="fc" id="L48">               &quot;Student ID: &quot; + SID + &quot;\n&quot;;</span>
+    }
+    
+    public void enterMarks(int maths, int english, int science)
+    {
+<span class="fc" id="L53">    	markForMaths = maths;</span>
+<span class="fc" id="L54">    	markForEnglish = english;</span>
+<span class="fc" id="L55">    	markForScience = science;</span>
+<span class="fc" id="L56">    }</span>
+
+    // return mark for maths
+    public int getMathsMark()
+    {
+<span class="fc" id="L61">    	return markForMaths;</span>
+    }
+
+    // return mark for English
+    public int getEnglishMark()
+    {
+<span class="fc" id="L67">    	return markForEnglish;</span>
+    }
+    
+    // return mark for Science
+    public int getScienceMark()
+    {
+<span class="fc" id="L73">    	return markForScience;</span>
+    }
+
+    // return the average of the three marks
+    public double calculateAverageMark()
+    {
+<span class="fc" id="L79">    	return ((markForMaths + markForEnglish +</span>
+<span class="fc" id="L80">    			markForScience) / 3.0);</span>
+    }
+    
+    //return the grade 
+    public String getGrade(double gradeFloat)
+    {
+    	String category;
+    	int grade;
+<span class="fc" id="L88">    	grade = (int) Math.round(gradeFloat); </span>
+<span class="fc bfc" id="L89" title="All 7 branches covered.">    	switch (grade)</span>
+    	{
+    	case 10:
+<span class="fc" id="L92">    		category = &quot;Perfect Score&quot;;</span>
+<span class="fc" id="L93">    		break;</span>
+    	case 9:
+<span class="fc" id="L95">    		category = &quot;Excellent&quot;;</span>
+<span class="fc" id="L96">    		break;</span>
+    	case 8:
+<span class="fc" id="L98">    		category = &quot;Good&quot;;</span>
+<span class="fc" id="L99">    		break;</span>
+    	case 7:
+<span class="fc" id="L101">    		category = &quot;Above Average&quot;;</span>
+<span class="fc" id="L102">    		break;</span>
+    	case 6:
+<span class="fc" id="L104">    		category = &quot;Average&quot;;</span>
+<span class="fc" id="L105">    		break;</span>
+    	case 5:
+<span class="fc" id="L107">    		category =  &quot;Below Average&quot;;</span>
+<span class="fc" id="L108">    		break;</span>
+    	default:
+<span class="fc" id="L110">    		category = &quot;Not Passing&quot;;</span>
+    		break;
+    	}
+<span class="fc" id="L113">    	return category;</span>
+    	
+    }
+    
+    //return the marks report
+    public String GetStudentGradeReport()
+    {
+<span class="fc" id="L120">        return &quot;Grades Report&quot;+ &quot;\n&quot;+</span>
+<span class="fc" id="L121">                &quot;Name: &quot; +this.getName()+ &quot;\n&quot;+</span>
+<span class="fc" id="L122">    	        &quot;Average: &quot; +this.calculateAverageMark()+ &quot;\n&quot;+</span>
+<span class="fc" id="L123">    	        &quot;Grade: &quot; +this.getGrade(this.calculateAverageMark()) + &quot;\n&quot;+</span>
+<span class="fc" id="L124">    	        &quot;Math Mark: &quot; + markForMaths + &quot;\n&quot;+</span>
+<span class="fc" id="L125">    	        &quot;English Mark: &quot; + markForEnglish + &quot;\n&quot;+</span>
+<span class="fc" id="L126">    	        &quot;Science Mark: &quot; + markForScience + &quot;\n&quot;;</span>
+    }
+ }
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.6.201602180812</span>2BlueJSample (14-may-2017 20:38:45)</div></body></html>
